@@ -294,6 +294,9 @@
 (global-set-key (kbd "C-c C-r") 'org-remember)
 (global-set-key (kbd "C-c C-,") 'org-priority)
 
+;;org-capture启动的快捷键
+ (define-key global-map "\C-cc" 'org-capture)
+
 ;; -------------emacs w3m--------------------
 (global-set-key "\C-xm" 'browse-url-at-point)  
 (global-set-key "\C-xn" 'browse-url)  
@@ -377,10 +380,10 @@
 (define-key c-mode-base-map [(f7)] 'cscope-pop-mark)
 (define-key c-mode-base-map [(f8)] 'cscope-find-global-definition-no-prompting)
 ;;cscope go-mode
-(define-key go-mode-map [(f7)] 'cscope-pop-mark)
-(define-key go-mode-map [(f8)] 'cscope-find-global-definition-no-prompting)
-(define-key go-mode-map [(C-f7)] 'gocscope-pop-mark)
-(define-key go-mode-map [(C-f8)] 'godef-jump)
+(define-key go-mode-map [(C-f7)] 'cscope-pop-mark)
+(define-key go-mode-map [(C-f8)] 'cscope-find-global-definition-no-prompting)
+(define-key go-mode-map [(f7)] 'gocscope-pop-mark)
+(define-key go-mode-map [(f8)] 'godef-jump)
 
 ;;swith-window
 (global-set-key (kbd "C-x o") 'switch-window)
