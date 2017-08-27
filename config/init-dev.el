@@ -1245,3 +1245,5 @@ original buffer content
 ;;---------emacs blog form org-mode to hugo -------------------------------
 (require 'org2hugo-single)
 (require 'org2hugo-subtree)
+
+(require 'imenu-list)

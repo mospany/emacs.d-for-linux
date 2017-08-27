@@ -206,7 +206,8 @@
 (global-set-key [f4] 'eshell)
 (global-set-key [C-f9] 'ecb-activate)
 (global-set-key [S-f9] 'ecb-deactivate)
-(global-set-key [C-f10] 'sr-speedbar-toggle) ;;sr-speedbar按键绑定
+(global-set-key [C-f10] 'imenu-list-smart-toggle) ;;imenu-list-smart-toggle按键绑定
+(global-set-key [S-f10] 'sr-speedbar-toggle) ;;sr-speedbar按键绑定
 (global-set-key [C-f11] 'ediff)
 (global-set-key [S-f11] 'ediff-directories)
 (global-set-key [f12] 'svn-status)
