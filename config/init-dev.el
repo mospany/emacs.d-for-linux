@@ -287,6 +287,7 @@
 (require 'auto-complete-config)
 (require 'go-guru)
 (require 'go-add-tags)
+(require 'gotests)
 
 ;; 高亮局部变量，和sourceinsight类似(感觉颜色有点别扭，先用试用一下再说 2011-11-24)
 (require 'zjl-hl)
