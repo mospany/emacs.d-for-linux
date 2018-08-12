@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ go-add-tags
+ gotests
+ pwd
+ qrr
+ gotests-region
  abs-indent
  abs-unindent
- list-packages
- dig
- ping
- cd
- erc-tls
 )
 
 ;; ----- smex-data -----
@@ -24,4 +24,9 @@
  (helm-M-x . 1)
  (abs-indent . 4)
  (abs-unindent . 1)
+ (gotests-region . 2)
+ (gotests . 3)
+ (go-add-tags . 15)
+ (qrr . 8)
+ (pwd . 1)
 )
