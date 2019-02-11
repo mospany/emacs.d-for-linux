@@ -373,8 +373,8 @@
 (custom-set-variables
  '(go-add-tags-style 'lower-camel-case))
 
-(with-eval-after-load 'go-mode
-  (define-key go-mode-map (kbd "C-c t") #'go-add-tags))
+;(with-eval-after-load 'go-mode
+;  (define-key go-mode-map (kbd "C-c t") #'go-add-tags))
 
 ;--------------阅读代码快捷键-------------------------------------
 ;;cscope python-mode

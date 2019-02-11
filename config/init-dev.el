@@ -699,7 +699,7 @@ original buffer content
 ;需先安装: sudo apt-get install w3m
 (add-to-list 'load-path "~/.emacs.d/lib/emacs-w3m/share/emacs/site-lisp/w3m")
 (require 'w3m-load)
-(require 'mime-w3m)
+;(require 'mime-w3m) ;; shade by mosp for centos7 
 ;(require 'w3m-settings)
 ;; w3m
 ;load & init 
@@ -766,6 +766,7 @@ original buffer content
 ;常用属性格式
 ;#+STYLE: <link rel="stylesheet" type="text/css" href="/root/.emacs.d/style/style.css" />
 ;#+OPTIONS: ^:{} H:5 toc:5
+(require 'ox-md nil t)
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (add-hook 'org-mode-hook 'turn-on-font-lock)
 ;让不同级别的标题采用不同大小的字体 add by mosp, 2015/08/22 18:02:11 
@@ -998,7 +999,7 @@ original buffer content
 ;登陆https://www.evernote.com/api/DeveloperToken.action生成token
 (setq evernote-developer-token "S=s272:U=224c205:E=14b9008abf2:C=14438577ff4:P=1cd:A=en-devtoken:V=2:H=727256d10ec5221a3007fda0bf572af7")
 (setq evernote-enml-formatter-command '("w3m" "-dump" "-I" "UTF8" "-O" "UTF8"))
-(require 'evernote-mode)
+;(require 'evernote-mode) ;;shade by mosp for centos7
 
 ;;emacs24内置cedet
 ;(require 'cedet)
@@ -1094,9 +1095,9 @@ original buffer content
 
 ;;-------------------------org2blog--------------------------------------
 (setq load-path (cons "~/.emacs.d/lib/org2blog/" load-path))
-(require 'org2blog-autoloads)
-(require 'xml-rpc)
-(require 'org2blog-autoloads)
+; (require 'org2blog-autoloads)
+;(require 'xml-rpc)
+; (require 'org2blog-autoloads) ;; shade by mospa for centos7
 ;(setq url-using-proxy t)
 ;(setq url-proxy-services '(("http" . "our-proxy:8118")))
 ;(setq url-proxy-services '(("http" . "127.0.0.1:80")))
@@ -1214,7 +1215,7 @@ original buffer content
 
 ;;-------git-emacs----------------------------------
 (add-to-list 'load-path "~/.emacs.d/lib/git-emacs/")
-(require 'git-emacs)
+;(require 'git-emacs) ;;shade by mosp for centos7
 
 ;; Use the command j to list common directories and to jump to them.
 (require 'eshell-autojump)
