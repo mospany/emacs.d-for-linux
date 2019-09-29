@@ -29,6 +29,8 @@
 (add-to-list 'load-path "~/.emacs.d/lib/find-file-in-project")
 (add-to-list 'load-path "~/.emacs.d/lib/chinese-fonts-setup")
 
+(setq exec-path (cons "/usr/local/bin" exec-path))  
+
 (require 'eval-after-load)
 (require 'ahei-misc)
 ;conf-font存在放大字体时中文不变的问题 alter by mosp,2015/08/23 11:26:33
@@ -282,12 +284,14 @@
 ;;---------go-mode------------------------------------
 (require 'go-mode)
 (require 'go-mode-load)
-(require 'go-autocomplete)
 (require 'go-mode-setting)
+(require 'go-autocomplete)
 (require 'auto-complete-config)
 (require 'go-guru)
 (require 'go-add-tags)
 (require 'gotests)
+(add-to-list 'ac-dictionary-directories (concat  "~/.emacs.d/lib/auto-complete/dict"))
+(ac-config-default)
 
 ;; 高亮局部变量，和sourceinsight类似(感觉颜色有点别扭，先用试用一下再说 2011-11-24)
 (require 'zjl-hl)
@@ -768,6 +772,7 @@ original buffer content
 ;#+OPTIONS: ^:{} H:5 toc:5
 (require 'ox-md nil t)
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(add-to-list 'auto-mode-alist '("\\.orgx\\'" . org-mode))
 (add-hook 'org-mode-hook 'turn-on-font-lock)
 ;让不同级别的标题采用不同大小的字体 add by mosp, 2015/08/22 18:02:11 
 (add-hook 'org-mode-hook
