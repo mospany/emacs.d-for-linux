@@ -137,10 +137,10 @@
 ;(set-default-font "-apple-Microsoft_YaHei-medium-normal-normal-*-12-*-*-*-p-0-iso10646-1")
 (set-language-environment 'UTF-8)
 (set-locale-environment "UTF-8")
-;(set-default-font "Courier New-13")
+(set-default-font "Courier New-13")
 ;(set-default-font "Monaco-14")
 ;(set-default-font "Inconsolata-13")
 ;(set-default-font "Anonymous Pro-15")
 ;;; shade by mospan, 2016-05-18, use in emacs24.5 error
-;(set-fontset-font "fontset-default" 'unicode '("WenQuanYi Zen Hei" . "unicode-ttf"))
+(set-fontset-font "fontset-default" 'unicode '("WenQuanYi Zen Hei" . "unicode-ttf"))
 
