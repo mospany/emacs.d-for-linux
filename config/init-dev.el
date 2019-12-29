@@ -51,8 +51,10 @@
 
 
 ;; 所有的自动补全的配置
-(require 'all-auto-complete-settings)
-(setq-default global-auto-complete-mode t)
+;(require 'all-auto-complete-settings)     ;; 这两行影响到java-meg-mode暂屏蔽，by mosp, 2019-12-22
+;(setq-default global-auto-complete-mode t)
+;使用commany-mode
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;;先设置缩进
 ;;设置TAB宽度为4
@@ -197,11 +199,31 @@
 ;;bookmark
 (require 'bookmark-settings)
 
-;;CC-MODE c语言开发环境
-;; Make a non-standard key binding.  We can put this in
-;; c-mode-base-map because c-mode-map, c++-mode-map, and so on,
-;; inherit from it.
-(require 'cc-mode)
+;--------java mode(meghanada) -----------------
+(require 'meghanada)
+(add-hook 'java-mode-hook
+          (lambda ()
+            ;; meghanada-mode on
+            (meghanada-mode t)
+            ;; enable telemetry
+            (meghanada-telemetry-enable t)
+            (flycheck-mode +1)
+            (setq c-basic-offset 2)
+            ;; use code format
+            (add-hook 'before-save-hook 'meghanada-code-beautify-before-save)))
+(cond
+   ((eq system-type 'windows-nt)
+    (setq meghanada-java-path (expand-file-name "bin/java.exe" (getenv "JAVA_HOME")))
+    (setq meghanada-maven-path "mvn.cmd"))
+   (t
+    (setq meghanada-java-path "java")
+    (setq meghanada-maven-path "mvn")))
+
+;CC-MODE c语言开发环境
+; Make a non-standard key binding.  We can put this in
+; c-mode-base-map because c-mode-map, c++-mode-map, and so on,
+; inherit from it.
+;(require 'cc-mode) 
 (defun my-c-initialization-hook ()
   (define-key c-mode-base-map "\C-m" 'c-context-line-break))
 (add-hook 'c-initialization-hook 'my-c-initialization-hook)
